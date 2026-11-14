@@ -1,0 +1,45 @@
+Workshop 5 : Comment faire un agent IA
+1. C’est quoi un agent IA ?
+
+Un chatbot répond à une question puis s’arrête. Un agent IA reçoit un objectif et décide lui-même des actions à faire pour l’atteindre, en plusieurs étapes si nécessaire.
+
+Exemple : on lui demande « Prépare-moi un résumé des dernières actualités sur l’IA ». Il cherche sur le web, lit les articles, garde l’essentiel, puis rédige le résumé. Il n’a pas besoin qu’on lui dise chaque action.
+
+2. Les 4 composants d’un agent
+Composant	Rôle	Exemples
+Le LLM (le cerveau)	Comprend, raisonne et décide	GPT, Claude, Gemini, Llama
+Les outils	Ce que l’agent peut faire	Recherche web, lecture de fichiers, calculatrice, API
+La mémoire	Garde le contexte	Historique de la conversation, base de connaissances
+La boucle de contrôle	Fait avancer l’agent étape par étape	Cycle réfléchir → agir → observer
+3. Comment fonctionne un agent (la boucle)
+Objectif : l’utilisateur donne une tâche.
+Réflexion : le LLM analyse et planifie.
+Action : il choisit un outil et l’utilise.
+Observation : il lit le résultat de l’outil.
+Répétition : il recommence jusqu’à avoir assez d’informations.
+Réponse finale : il donne le résultat à l’utilisateur.
+
+Ce principe s’appelle ReAct (Reasoning + Acting).
+
+4. Étapes à suivre pour créer un agent IA
+Définir l’objectif : que doit faire l’agent, pour qui, et dans quel domaine ?
+Choisir le LLM : modèle via API (Claude, OpenAI, Gemini) ou modèle local (Ollama).
+Choisir le framework : LangChain, LangGraph, CrewAI, smolagents, ou sans framework.
+Définir les outils : lister les actions nécessaires et décrire chacune clairement.
+Rédiger le prompt système : rôle de l’agent, règles, format de réponse, limites.
+Mettre en place la mémoire : historique de conversation, et éventuellement une base documentaire.
+Construire la boucle : l’agent réfléchit, utilise un outil, observe, puis répond.
+Tester : essayer des cas simples, difficiles et hors sujet.
+Corriger et améliorer : ajuster le prompt, les outils et les limites (nombre d’itérations, gestion d’erreurs).
+Documenter et publier sur GitHub : README, architecture, instructions, exemples, limites.
+5. Bonnes pratiques
+Commencer simple : un agent, un ou deux outils.
+Des descriptions d’outils claires, c’est ce qui permet à l’agent de bien choisir.
+Fixer des limites (nombre de tours, actions interdites).
+Ne jamais publier de clé API sur GitHub.
+Garder un humain dans la boucle pour les actions sensibles.
+6. Limites des agents IA
+Risque d’hallucinations (informations inventées).
+Peuvent se tromper d’outil ou tourner en boucle.
+Coût en appels API et temps d’exécution.
+Questions de sécurité et de confidentialité des données.
